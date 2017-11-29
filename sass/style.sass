@@ -1,4 +1,42 @@
-body
-    background-color: pink
-    font-size: 50px
-    margin: 0
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans+Condensed:300');
+
+$background_color: #664cc5
+$font_tile: 'Cinzel', serif
+$font_main: 'Open Sans Condensed', sans-serif
+$font_motto: 'Gloria Hallelujah', cursive
+
+=border-rad($radius)
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+
+=transform-translate($hor, $ver)
+    transform: translate($hor, $ver);
+    -webkit-transform: translate($hor, $ver);
+    -moz-transform: translate($hor, $ver);
+    -ms-transform: translate($hor, $ver);
+    -o-transform: translate($hor, $ver);
+    
+
+.main-container
+    background-color: $background_color;
+    height: 100vh;
+    min-height: 100vh!important;
+    width: 100vw;
+    min-width: 100vw!important;
+    position: relative;
+    .menu-bar
+        width: 200px;
+        max-width: 200px;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        +transform-translate(0, -50%);
+    .page-content
+        width: 80%;
+        height: 70%;
+        margin: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        +transform-translate(-50%, -50%);
