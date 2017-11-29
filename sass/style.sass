@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans:300');
 
 $background_color: #664cc5
 $font_tile: 'Cinzel', serif
-$font_main: 'Open Sans Condensed', sans-serif
+$font_main: 'Open Sans', sans-serif
 $font_motto: 'Gloria Hallelujah', cursive
 
 =border-rad($radius)
@@ -32,6 +32,17 @@ $font_motto: 'Gloria Hallelujah', cursive
         right: 0;
         top: 50%;
         +transform-translate(0, -50%);
+        nav
+            .navigation-list
+                list-style-type: none;
+                padding: 0 10px 0 0;
+                margin: 0;
+                float: right;
+                text-align: right;
+                li
+                    a
+                        color: #fff!important;
+                        font-family: $font_main;
     .page-content
         width: 80%;
         height: 70%;

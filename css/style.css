@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans:300");
 .main-container {
   background-color: #664cc5;
   height: 100vh;
@@ -17,6 +17,15 @@
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     -o-transform: translate(0, -50%); }
+    .main-container .menu-bar nav .navigation-list {
+      list-style-type: none;
+      padding: 0 10px 0 0;
+      margin: 0;
+      float: right;
+      text-align: right; }
+      .main-container .menu-bar nav .navigation-list li a {
+        color: #fff !important;
+        font-family: "Open Sans", sans-serif; }
   .main-container .page-content {
     width: 80%;
     height: 70%;
