@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans:300|Lobster");
+* {
+  transition: all .3s ease-in-out; }
+
 .main-container {
   background-color: #9CAB98;
   height: 100vh;
@@ -7,8 +10,8 @@
   min-width: 100vw !important;
   position: relative; }
   .main-container .menu-bar {
-    width: 200px;
-    max-width: 200px;
+    width: 100px;
+    max-width: 100px;
     position: fixed;
     right: 0;
     top: 50%;
@@ -23,24 +26,27 @@
       margin: 0;
       float: right;
       text-align: right; }
+      .main-container .menu-bar nav .navigation-list .active .marker {
+        opacity: 1.0; }
       .main-container .menu-bar nav .navigation-list li {
-        height: 1.5rem; }
-        .main-container .menu-bar nav .navigation-list li a {
-          color: #fff;
-          font-family: "Open Sans", sans-serif;
-          text-decoration: none;
-          cursor: default; }
+        display: inline-block;
+        height: 1.5rem;
+        width: 90px;
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+        text-decoration: none;
+        cursor: default; }
         .main-container .menu-bar nav .navigation-list li .marker {
           display: inline-block;
           float: right;
-          width: 5px;
-          height: 5px;
+          width: 0.3rem;
+          height: 0.3rem;
           border-radius: 50%;
           -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
           background-color: #fff;
           opacity: 0.3;
-          margin: 0.5rem 0 0.5rem 0.5rem; }
+          margin: 0.7rem 0 0.5rem 0.7rem; }
   .main-container .page-content {
     width: 80%;
     height: 70%;
@@ -58,6 +64,7 @@
       height: 100%;
       display: none; }
     .main-container .page-content .home-section {
+      display: block;
       position: relative; }
       .main-container .page-content .home-section p {
         margin: 0;
@@ -84,20 +91,20 @@
         -moz-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
         -o-transform: translate(0, -50%); }
-    .main-container .page-content .skills-section {
-      display: block; }
-      .main-container .page-content .skills-section h2 {
-        font-family: "Open Sans", sans-serif;
-        color: #fff;
-        text-align: center; }
-      .main-container .page-content .skills-section .icons {
-        color: #fff;
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 2.5rem; }
-        .main-container .page-content .skills-section .icons [class*="devicon-"] {
-          padding: 0.5rem; }
-      .main-container .page-content .skills-section .icons:last-child {
-        margin-bottom: initial; }
+    .main-container .page-content .skills-section h2 {
+      font-family: "Open Sans", sans-serif;
+      color: #fff;
+      text-align: center; }
+    .main-container .page-content .skills-section .icons {
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem; }
+      .main-container .page-content .skills-section .icons [class*="devicon-"] {
+        padding: 0.5rem; }
+        .main-container .page-content .skills-section .icons [class*="devicon-"]:hover {
+          font-size: 2.5rem; }
+    .main-container .page-content .skills-section .icons:last-child {
+      margin-bottom: initial; }
 
 /*# sourceMappingURL=style.css.map */
