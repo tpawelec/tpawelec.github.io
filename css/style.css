@@ -86,9 +86,18 @@
         -o-transform: translate(0, -50%); }
     .main-container .page-content .skills-section {
       display: block; }
-      .main-container .page-content .skills-section h4 {
+      .main-container .page-content .skills-section h2 {
         font-family: "Open Sans", sans-serif;
         color: #fff;
         text-align: center; }
+      .main-container .page-content .skills-section .icons {
+        color: #fff;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 2.5rem; }
+        .main-container .page-content .skills-section .icons [class*="devicon-"] {
+          padding: 0.5rem; }
+      .main-container .page-content .skills-section .icons:last-child {
+        margin-bottom: initial; }
 
 /*# sourceMappingURL=style.css.map */

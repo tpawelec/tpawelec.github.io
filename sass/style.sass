@@ -92,7 +92,16 @@ $font_motto: 'Gloria Hallelujah', cursive
                 +transform-translate(0, -50%);
         .skills-section
             display: block;
-            h4
+            h2
                 font-family: $font_main
                 color: $font_color
                 text-align: center;
+            .icons
+                color: $font_color;
+                font-size: 1.5rem;
+                text-align: center
+                margin-bottom: 2.5rem;
+                [class*="devicon-"]
+                    padding: 0.5rem;
+            .icons:last-child
+                margin-bottom: initial;
