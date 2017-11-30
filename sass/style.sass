@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Cinzel:400,700|Open+Sans:300|Lobster');
 
-$background_color: #664cc5
-$font_tile: 'Cinzel', serif
+$background_color: #9CAB98 //#4555F2 //#664cc5
+$font_color: #fff
+$font_title: 'Lobster', cursive //'Cinzel', serif
 $font_main: 'Open Sans', sans-serif
 $font_motto: 'Gloria Hallelujah', cursive
 
@@ -35,14 +36,29 @@ $font_motto: 'Gloria Hallelujah', cursive
         nav
             .navigation-list
                 list-style-type: none;
-                padding: 0 10px 0 0;
+                padding: 0 0.5rem 0 0;
                 margin: 0;
                 float: right;
                 text-align: right;
                 li
+                    height: 1.5rem;
                     a
-                        color: #fff!important;
+                        color: $font_color;
                         font-family: $font_main;
+                        text-decoration: none;
+                        cursor: default;
+                    .marker
+                        display: inline-block;
+                        float: right;
+                        width: 5px;
+                        height: 5px;
+                        +border-rad(50%);
+                        background-color: #fff;
+                        opacity: 0.3;
+                        margin: 0.5rem 0 0.5rem 0.5rem;
+                        
+                        
+                        
     .page-content
         width: 80%;
         height: 70%;
@@ -51,3 +67,24 @@ $font_motto: 'Gloria Hallelujah', cursive
         top: 50%;
         left: 50%;
         +transform-translate(-50%, -50%);
+        [class*="-section"]
+            width: 100%;
+            height: 100%;
+        .home-section
+            position: relative;
+            p
+                margin: 0;
+                color: $font_color;
+            .title-par
+                position: absolute;
+                top: 50%;
+                +transform-translate(0, -50%);
+                font-family: $font_title;
+                font-size: 5rem;
+                text-align: center;
+            .motto-par
+                font-family: $font_motto;
+                position: absolute;
+                top: 70%;
+                right: 0;
+                +transform-translate(0, -50%);
