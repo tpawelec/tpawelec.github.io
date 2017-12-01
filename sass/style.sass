@@ -40,11 +40,12 @@ $font_motto: 'Gloria Hallelujah', cursive
     .menu-bar
         width: 100px;
         max-width: 100px;
-        position: fixed;
-        right: 0;
+        position: absolute;
+        right: 1rem;
         top: 50%;
         +transform-translate(0, -50%);
         nav
+            +transform-scale(1.2);
             .navigation-list
                 list-style-type: none;
                 padding: 0 0.5rem 0 0;
@@ -56,7 +57,7 @@ $font_motto: 'Gloria Hallelujah', cursive
                         opacity: 1.0;
                 li
                     display: inline-block;
-                    height: 1.5rem;
+                    height: 2rem;
                     width: 90px;
                     color: $font_color;
                     font-family: $font_main;
@@ -65,12 +66,12 @@ $font_motto: 'Gloria Hallelujah', cursive
                     .marker
                         display: inline-block;
                         float: right;
-                        width: 0.3rem;
-                        height: 0.3rem;
+                        width: 0.5rem;
+                        height: 0.5rem;
                         +border-rad(50%);
                         background-color: #fff;
                         opacity: 0.3;
-                        margin: 0.7rem 0 0.5rem 0.7rem;
+                        margin: 0.5rem 0 0.5rem 0.5rem;
                         
                         
                         
