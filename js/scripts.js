@@ -1,17 +1,29 @@
 $(function() {
 
+    function getCurrenElementDiv() {
+        var currElem = $('#navList .active').attr("id");
+        
+        return $('#pageContent #' + String(currElem) + 'Section');
+    }
+    
+    function getCurrenElementNav() {
+        var currElem = $('#navList .active').attr("id");
+        
+        return $('#navList #' + String(currElem));
+    }
 /*
 	MENU
 */
 
 $("#navList li").click(function(e) {
 	var tarElem = e.currentTarget.id;
-	var currElem = $('#navList .active').attr("id");
+	var currElemDiv = getCurrenElementDiv();
+    var currElemNav = getCurrenElementNav();
 
-	$('#navList #' + String(currElem)).removeClass("active");
+    currElemNav.removeClass("active");
 	$('#navList #' + String(tarElem)).addClass("active");
 
-	$('#pageContent #' + String(currElem) + 'Section').css('left', '-500rem');
+	currElemDiv.css('left', '-200rem');
 	$('#pageContent #' + String(tarElem) + 'Section').css('left', '0');
 	
 
@@ -20,23 +32,31 @@ $("#navList li").click(function(e) {
 /*
     SCROLL EVENT
 */
-/*    
-$().scroll(function() {
-    var currentScroll = $(window).scrollTop();
-    console.log(currentScroll);
-    if(0 <= currentScroll < 100) {
-        console.log("1");
-    } else if (100 <= currentScroll < 200) {
-        console.log("2");
-    } else if (200 <= currentScroll < 300) {
-        console.log("3");
-    } else {
-        console.log("4");
-    }
-}); */
     
-$('#pageContent').bind('mousewheel', function(e) {
-    var delta = e.originalEvent.wheelDelta;
+$('#pageContent').on('mousewheel', function(e) {
+    var delta = e.originalEvent.wheelDeltaY;
+    var currElemDiv = getCurrenElementDiv();
+    var currElemNav = getCurrenElementNav();
+    
+    if(delta < 0) {
+        if(currElemDiv.attr("id") != "contactSection") {
+            currElemNav.removeClass("active");
+            currElemNav.next().addClass("active");
+        
+            currElemDiv.css('left', '-200rem');
+            currElemDiv.next().css('left', '0');
+        }
+    } else {
+        if(currElemDiv.attr("id") != "homeSection") {
+            currElemNav.removeClass("active");
+            currElemNav.prev().addClass("active");
+        
+            currElemDiv.css('left', '-200rem');
+            currElemDiv.prev().css('left', '0');
+        }
+    }
     console.log(delta);
+    
+    
 });
 });
