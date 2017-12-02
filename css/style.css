@@ -134,8 +134,8 @@
         .main-container .page-content .contact-section .social-media .social-icons {
           width: 100%; }
           .main-container .page-content .contact-section .social-media .social-icons .icon-btn {
-            width: 3rem;
-            height: 3rem;
+            width: 4rem;
+            height: 4rem;
             background-color: transparent;
             border: none;
             cursor: pointer;
@@ -148,13 +148,15 @@
       .main-container .page-content .contact-section .contact-me {
         padding-top: 2rem;
         font-size: 1.5rem; }
-        .main-container .page-content .contact-section .contact-me .title, .main-container .page-content .contact-section .contact-me .val {
+        .main-container .page-content .contact-section .contact-me .title {
           text-align: center; }
-        .main-container .page-content .contact-section .contact-me .val a {
-          color: #fff !important; }
-          .main-container .page-content .contact-section .contact-me .val a:hover {
-            color: #fff !important;
-            text-decoration: none; }
+        .main-container .page-content .contact-section .contact-me .val {
+          text-align: left; }
+          .main-container .page-content .contact-section .contact-me .val a {
+            color: #fff !important; }
+            .main-container .page-content .contact-section .contact-me .val a:hover {
+              color: #fff !important;
+              text-decoration: none; }
 
 @media (max-width: 1024px) {
   html {
