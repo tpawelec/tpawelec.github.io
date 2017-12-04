@@ -1,3 +1,4 @@
+
 $(function () {
 
     function getCurrenElementDiv() {
@@ -82,4 +83,5 @@ $(function () {
                 currElemDiv.prev().css('left', '0');
             }
    });
+
 });
