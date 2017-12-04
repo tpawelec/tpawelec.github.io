@@ -93,12 +93,13 @@
       font-family: "Gloria Hallelujah", cursive;
       position: absolute;
       top: 70%;
-      right: 0;
+      right: 5rem;
       transform: translate(0, -50%);
       -webkit-transform: translate(0, -50%);
       -moz-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
-      -o-transform: translate(0, -50%); }
+      -o-transform: translate(0, -50%);
+      font-size: 1.5rem; }
     .main-container .page-content .about-section {
       left: -200rem; }
       .main-container .page-content .about-section img {
