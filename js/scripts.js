@@ -1,6 +1,6 @@
 
 $(function () {
-
+    $(".ui-loader").hide();
     function getCurrenElementDiv() {
         var currElem = $('#navList .active').attr("id");
 
@@ -86,5 +86,16 @@ var currElemDiv = getCurrenElementDiv();
                 currElemDiv.prev().css('left', '0');
             }
    }); 
+    
+/*
+    PROMPT FOR MOBILE DEVICES
+*/
+    if ((/Mobi/.test(navigator.userAgent)) || ($(window).width() < 1024)) {
+        $('.prompt-message').css('display', 'block');
+    }
+    
+    $('.close-prompt').click(function(e) {
+        $('.prompt-message').css('display', 'none');
+    });
 
 });
