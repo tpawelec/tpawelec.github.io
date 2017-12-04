@@ -32,11 +32,11 @@ $(function () {
     /*
         SCROLL EVENT
     */
-
-    $('#pageContent').on('mousewheel', function (e) {
-        var delta = e.originalEvent.wheelDelta;
+    
         var currElemDiv = getCurrenElementDiv();
         var currElemNav = getCurrenElementNav();
+    $('#pageContent').on('mousewheel', function (e) {
+        var delta = e.originalEvent.wheelDelta;
 
         if (delta < 0) {
             if (currElemDiv.attr("id") != "contactSection") {
@@ -58,6 +58,28 @@ $(function () {
 
 
     });
+    
+    /* 
+        SWIPE EVENTS 
+    */
+    
+    $('#pageContent').bind('swipeleft', function(e) {
+        if (currElemDiv.attr("id") != "contactSection") {
+                currElemNav.removeClass("active");
+                currElemNav.next().addClass("active");
 
-   
+                currElemDiv.css('left', '-200rem');
+                currElemDiv.next().css('left', '0');
+            }
+    });
+
+   $('#pageContent').bind('swileright', function(e) {
+       if (currElemDiv.attr("id") != "homeSection") {
+                currElemNav.removeClass("active");
+                currElemNav.prev().addClass("active");
+
+                currElemDiv.css('left', '-200rem');
+                currElemDiv.prev().css('left', '0');
+            }
+   });
 });
