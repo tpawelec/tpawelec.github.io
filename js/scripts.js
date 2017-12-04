@@ -34,11 +34,10 @@ $(function () {
         SCROLL EVENT
     */
     
-        var currElemDiv = getCurrenElementDiv();
-        var currElemNav = getCurrenElementNav();
     $('#pageContent').on('mousewheel', function (e) {
         var delta = e.originalEvent.wheelDelta;
-
+var currElemDiv = getCurrenElementDiv();
+        var currElemNav = getCurrenElementNav();
         if (delta < 0) {
             if (currElemDiv.attr("id") != "contactSection") {
                 currElemNav.removeClass("active");
@@ -62,9 +61,11 @@ $(function () {
     
     /* 
         SWIPE EVENTS 
-    */
     
+    */
     $('#pageContent').bind('swipeleft', function(e) {
+        var currElemDiv = getCurrenElementDiv();
+        var currElemNav = getCurrenElementNav();
         if (currElemDiv.attr("id") != "contactSection") {
                 currElemNav.removeClass("active");
                 currElemNav.next().addClass("active");
@@ -75,6 +76,8 @@ $(function () {
     });
 
    $('#pageContent').bind('swileright', function(e) {
+       var currElemDiv = getCurrenElementDiv();
+        var currElemNav = getCurrenElementNav();
        if (currElemDiv.attr("id") != "homeSection") {
                 currElemNav.removeClass("active");
                 currElemNav.prev().addClass("active");
@@ -82,6 +85,6 @@ $(function () {
                 currElemDiv.css('left', '-200rem');
                 currElemDiv.prev().css('left', '0');
             }
-   });
+   }); 
 
 });
