@@ -75,7 +75,7 @@ var currElemDiv = getCurrenElementDiv();
             }
     });
 
-   $('#pageContent').bind('swileright', function(e) {
+   $('#pageContent').bind('swiperight', function(e) {
        var currElemDiv = getCurrenElementDiv();
         var currElemNav = getCurrenElementNav();
        if (currElemDiv.attr("id") != "homeSection") {
