@@ -33,29 +33,39 @@ $(function () {
     /*
         SCROLL EVENT
     */
-    
+    var deltaSum = 0;
     $('#pageContent').on('mousewheel', function (e) {
         var delta = e.originalEvent.wheelDelta;
-var currElemDiv = getCurrenElementDiv();
+        deltaSum += delta;
+        var currElemDiv = getCurrenElementDiv();
         var currElemNav = getCurrenElementNav();
-        if (delta < 0) {
-            if (currElemDiv.attr("id") != "contactSection") {
-                currElemNav.removeClass("active");
-                currElemNav.next().addClass("active");
+        
+        if(deltaSum == 4*delta) {
+            if (delta < 0) {
+                if (currElemDiv.attr("id") != "contactSection") {
+                    currElemNav.removeClass("active");
+                    currElemNav.next().addClass("active");
 
-                currElemDiv.css('left', '-200rem');
-                currElemDiv.next().css('left', '0');
-            }
-        } else {
-            if (currElemDiv.attr("id") != "homeSection") {
-                currElemNav.removeClass("active");
-                currElemNav.prev().addClass("active");
+                    currElemDiv.css('left', '-200rem');
+                    currElemDiv.next().css('left', '0');
+                    deltaSum = 0;
+                } else {
+                    deltaSum = 0;
+                }
+            } else {
+                if (currElemDiv.attr("id") != "homeSection") {
+                    currElemNav.removeClass("active");
+                    currElemNav.prev().addClass("active");
 
-                currElemDiv.css('left', '-200rem');
-                currElemDiv.prev().css('left', '0');
+                    currElemDiv.css('left', '-200rem');
+                    currElemDiv.prev().css('left', '0');
+                    deltaSum = 0;
+                } else {
+                    deltaSum = 0;
+                }
             }
         }
-
+        console.log(deltaSum);
 
     });
     
