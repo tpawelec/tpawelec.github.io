@@ -99,7 +99,7 @@ $(function () {
     
 /*
     PROMPT FOR MOBILE DEVICES
-*/
+*
     if ((/Mobi/.test(navigator.userAgent)) || ($(window).width() < 1024)) {
         $('.prompt-message').css('display', 'block');
     }
@@ -107,5 +107,5 @@ $(function () {
     $('.close-prompt').click(function(e) {
         $('.prompt-message').css('display', 'none');
     });
-
+*/
 });

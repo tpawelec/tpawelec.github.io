@@ -248,6 +248,49 @@ $font_motto: 'Gloria Hallelujah', cursive
             background-color: transparent;
             border: none;
             font-size: 4rem;
+            
 @media (max-width: 1024px)
     html
         font-size: 12px;
+        
+@media (max-width: 1000px)
+    .main-container
+        
+        .menu-bar
+            display: block;
+            
+            border: 1px solid black;
+            min-width: 80%;
+            height: 2rem;
+            position: absolute;
+            bottom: 0;
+            
+            +transform-translate(50%, 0);
+            nav
+                width: 100%;
+                .navigation-list
+                    clear: both;
+                    padding: 0;
+                    width: 100%;
+                    left: 50%;
+                    +transform-translate(-50%, 0);
+                    li
+                        display: block;
+                        width: 16%;
+                        color: $font_color;
+                        font-family: $font_main;
+                        text-decoration: none;
+                        cursor: pointer;
+                        float: left;
+                        text-align: center;
+                        .marker
+                            display: none;
+                            float: right;
+                            width: 2rem;
+                            height: 0.7rem;
+                            +border-rad(0);
+        .page-content
+            width: 90%;
+            height: 80%;
+            top: 5%;
+            +transform-translate(-50%, 0);
