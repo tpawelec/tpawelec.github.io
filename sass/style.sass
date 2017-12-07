@@ -229,25 +229,6 @@ $font_motto: 'Gloria Hallelujah', cursive
                         &:hover
                             color: $font_color !important;
                             text-decoration: none;
-    .prompt-message
-        display: none;
-        min-height: 15%;
-        width: 100%
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: white;
-        opacity: 0.7;
-        font-family: $font_main;
-        font-size: 2.5rem;
-        padding: 1rem;
-        .close-prompt
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            background-color: transparent;
-            border: none;
-            font-size: 4rem;
             
 @media (max-width: 1024px)
     html
@@ -260,12 +241,13 @@ $font_motto: 'Gloria Hallelujah', cursive
         font-size: 12px;
     .main-container
         .menu-bar
-            width: 600px;
+            width: 400px;
             height: 2rem;
             position: relative;
             top: 85%;
             left: 50%;
             +transform-translate(-50%, 0);
+            display: inline-block;
             nav
                 +transform-scale(1);
                 .navigation-list
@@ -347,22 +329,23 @@ $font_motto: 'Gloria Hallelujah', cursive
         font-size: 12px;
     .main-container
         .menu-bar
-            width: 350px;
+            width: 300px;
             height: 2rem;
             position: relative;
             top: 85%;
             left: 50%;
             +transform-translate(-50%, 0);
+            display: inline-block;
             nav
                 +transform-scale(1);
                 .navigation-list
                     width: 100%;
                     padding: 0;
                     li
-                        font-size: 1.5rem;
+                        font-size: 1rem;
                         float: left;
                         text-align: center;
-                        min-width: 20%;
+                        min-width: 15%;
                         max-width: 20%;
                         .marker
                             margin: 0;
@@ -379,6 +362,9 @@ $font_motto: 'Gloria Hallelujah', cursive
             max-height: 80%;
             top: 10%;
             +transform-translate(-50%, 0%);
+            .home-section
+                .motto-par
+                    top: 90%;
             .about-section
                 img
                     float: left;
@@ -400,11 +386,14 @@ $font_motto: 'Gloria Hallelujah', cursive
                     font-size: 1rem;
             .projects-section
                 h3
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 .row
                     margin-bottom: 0.5rem;
-                    max-height: 50%;
+                    max-height: initial;
                     [class*="col-"]
+                        margin: 1px 0;
+                        img
+                            height: 80px;
                         .layer
                             opacity: 0.5;
                             &:hover
@@ -424,4 +413,15 @@ $font_motto: 'Gloria Hallelujah', cursive
                             .fa-github
                                 right: 10%;
                             .python
-                                right: 31%;								
+                                right: 31%;
+                    .pr-title
+                        max-height: 1.5rem;
+                        margin-bottom: 0;
+            .contact-section
+                .contact-me
+                    font-size: 1.5rem;
+                    .title
+                        text-align: center;
+                    .val
+                        text-align: center;
+                    
