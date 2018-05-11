@@ -1,111 +1,267 @@
+function strech_text(el){
+    var elmt          = el,
+    	tmp_text 	  = elmt.text(),
+    	calc_text     = elmt.html("<span> " + elmt.text() + "</span>"),
+        cont_width    = elmt.width(),
+        nb_char       = elmt.text().length,
+        spacing       = cont_width/nb_char,
+        txt_width;
+    txt_width = elmt.find('span:first').width();
+        var  char_width     = txt_width/nb_char,
+             ltr_spacing    = Math.round(spacing - char_width + (spacing - char_width)/nb_char); 
+  		
+  		elmt.text(tmp_text);
+        elmt.css({
+        	"letter-spacing": ltr_spacing,
+        	"padding-left": ltr_spacing / 2
+        });
+    
+}
 
-$(function () {
-    $(".ui-loader").hide();
-    function getCurrenElementDiv() {
-        var currElem = $('#navList .active').attr("id");
+$(document).ready(function () {
 
-        return $('#pageContent #' + String(currElem) + 'Section');
+	/*
+		Navigation
+	*/
+	var $menuListItems = $('.menu > ul > li'),
+		$menu = $(".navigation .menu"),
+		$contacts = $(".navigation .contacts"),
+		$navImg = $(".nav-img"),
+		$aboutContainer = $(".home > .container");
+
+	$menuListItems.each(function(node) {
+		strech_text($(this));
+	});
+
+	$aboutContainer.hide();
+
+	$("section").each(function(index, sect) {
+		$(sect).css({
+			display: "none"
+		});
+	});
+
+	$("#navButton").click(function(e) {
+		e.preventDefault();
+
+		$(this).css({
+			display: "none"
+		});
+
+		$(".logo").css({
+			display: "none"
+		})
+
+		$(".navigation").css({
+			height: "40vh"
+		});
+
+		$("section").each(function(index, sect) {
+			$(sect).css({
+				display: "block"
+			});
+		});
+
+		$(".navigation").on("transitionend webkitTransitionEnd oTransitionEnd", function(e) {
+			
+			if(e.originalEvent.propertyName !== "height") {
+				return;
+			}
+			$menu.css({
+				"margin-right": 0
+			});
+
+			$contacts.css({
+				display: "block",
+				"margin-left": 0
+				
+			});
+		});
+
+		$(".navigation .contacts").on("transitionend webkitTransitionEnd oTransitionEnd", function(e) {
+			if(e.originalEvent.propertyName == "margin-left") {
+				$navImg.toggleClass("triggered");
+				setTimeout(function() {
+					$aboutContainer.fadeIn();
+				}, 600);
+			}
+		});
+
+		
+		
+	});
+
+
+	$menuListItems.on("mouseover", function() {
+		$(this).toggleClass("hovered");
+
+	});
+
+	$menuListItems.on("mouseout", function() {
+		$(this).toggleClass("hovered");
+		
+	});
+
+
+	// Navigation menu
+
+	$menuListItems.click(function (e) {
+		var sectionId = e.currentTarget.id + "Section";
+		$("body, html").animate({
+			scrollTop: $("#" + sectionId).offset().top
+		}, 1000);
+		});
+	
+	window.sr = ScrollReveal();
+	sr.reveal("#SkillsSection .container", {
+		afterReveal: function () {
+			$(".skills .scale > .html5").css({
+				width: "70%"
+			});
+
+			$(".skills .scale > .css3").css({
+				width: "75%"
+			});
+
+			$(".skills .scale > .js").css({
+				width: "55%"
+			});
+
+			$(".skills .scale > .jquery").css({
+				width: "55%"
+			});
+
+			$(".skills .scale > .bootstrap").css({
+				width: "40%"
+			});
+
+			$(".skills .scale > .sass").css({
+				width: "40%"
+			});
+
+			$(".skills .scale > .git").css({
+				width: "40%"
+			});
+
+			$(".skills .scale > .grunt").css({
+				width: "40%"
+			});
+
+			$(".skills .scale > .python").css({
+				width: "35%"
+			});
+		}});
+	sr.reveal("#ProjectsSection .container");
+	sr.reveal("#ContactSection .container");
+
+	/*
+		Projects
+	*/
+
+	var $projectLayer = $(".project-layer");
+
+	$projectLayer.on("mouseover", function(e) {
+		$(e.currentTarget.childNodes[1]).css({
+			"margin-top": 0
+		});
+		$(e.currentTarget.childNodes[3]).css({
+			"bottom": "75px",
+			"opacity": 1
+		});
+	});
+
+	$projectLayer.on("mouseout", function(e) {
+		$(e.currentTarget.childNodes[1]).css({
+			"margin-top": "-100px"
+		});
+		$(e.currentTarget.childNodes[3]).css({
+			"bottom": 0,
+			"opacity": 0
+		});
+	});
+
+
+	/* Projects MODALS */
+
+	$("#ProjectsSection .btn").click(function(e){
+		e.preventDefault();
+		var projectId = e.currentTarget.id;
+		$(".modal-wrapper > figure").css({
+			display: "block"
+		});
+
+		$(".modal-wrapper ." + projectId + "-caption").css({
+			display: "block"
+		});
+		$(".img-wrapper > img").attr("src", "img/projects/mockup-" + projectId + ".png");
+		$(".img-wrapper > img").attr("alt", projectId + " mockup");
+		$(".modal-background").css({
+			visibility: "visible",
+			opacity: 1
+		});
+
+	});
+	
+	$(".modal-wrapper > .close").click(function (e){
+		$(".modal-wrapper > *:not(p)").css({
+			display: "none"
+		});
+		$(".modal-background").css({
+			visibility: "hidden",
+			opacity: 0
+		});
+	});
+
+
+
+	/* 
+		Contact form
+	*/
+
+	//update this with your $form selector
+    var form_id = "contactForm";
+
+    var data = {
+        "access_token": "ffcnbkspiv1ud2cg5mndnlap"
+    };
+
+    function onSuccess() {
+        // remove this to avoid redirect
+        sendButton.val('Email successfuly sent');
     }
 
-    function getCurrenElementNav() {
-        var currElem = $('#navList .active').attr("id");
-
-        return $('#navList #' + String(currElem));
+    function onError(error) {
+        // remove this to avoid redirect
+        sendButton.val('Email could not be sent');
     }
-    /*
-    	MENU
-    */
 
-    $("#navList li").click(function (e) {
-        var tarElem = e.currentTarget.id;
-        var currElemDiv = getCurrenElementDiv();
-        var currElemNav = getCurrenElementNav();
+    var sendButton = $("#" + form_id + " [name='send']");
 
-        currElemNav.removeClass("active");
-        $('#navList #' + String(tarElem)).addClass("active");
+    function send() {
+        sendButton.val('Sending…');
+        sendButton.prop('disabled',true);
 
-        currElemDiv.css('left', '-200rem');
-        $('#pageContent #' + String(tarElem) + 'Section').css('left', '0');
+        var sender = $("#" + form_id + " [name='sender']").val();
+        var reply_to = $("#" + form_id + " [name='reply_to']").val();
+        var subject = $("#" + form_id + " [name='subject']").val();
+        var message = $("#" + form_id + " [name='text']").val();
+        data.subject = subject;
+        data.text = "E-Mail: " + reply_to + "\nName: " + sender + "\n\n" + message;
 
+        $.post('https://postmail.invotes.com/send',
+            data,
+            onSuccess
+        ).fail(onError);
 
-    });
-
-    /*
-        SCROLL EVENT
-    */
-    var deltaSum = 0;
-    $('#pageContent').on('mousewheel', function (e) {
-        var delta = e.originalEvent.wheelDelta;
-        deltaSum += delta;
-        var currElemDiv = getCurrenElementDiv();
-        var currElemNav = getCurrenElementNav();
-        
-        if(deltaSum == 4*delta) {
-            if (delta < 0) {
-                if (currElemDiv.attr("id") != "contactSection") {
-                    currElemNav.removeClass("active");
-                    currElemNav.next().addClass("active");
-
-                    currElemDiv.css('left', '-200rem');
-                    currElemDiv.next().css('left', '0');
-                    deltaSum = 0;
-                } else {
-                    deltaSum = 0;
-                }
-            } else {
-                if (currElemDiv.attr("id") != "homeSection") {
-                    currElemNav.removeClass("active");
-                    currElemNav.prev().addClass("active");
-
-                    currElemDiv.css('left', '-200rem');
-                    currElemDiv.prev().css('left', '0');
-                    deltaSum = 0;
-                } else {
-                    deltaSum = 0;
-                }
-            }
-        }
-        console.log(deltaSum);
-
-    });
-    
-    /* 
-        SWIPE EVENTS 
-    
-    */
-    $('#pageContent').bind('swipeleft', function(e) {
-        var currElemDiv = getCurrenElementDiv();
-        var currElemNav = getCurrenElementNav();
-        if (currElemDiv.attr("id") != "contactSection") {
-                currElemNav.removeClass("active");
-                currElemNav.next().addClass("active");
-
-                currElemDiv.css('left', '-200rem');
-                currElemDiv.next().css('left', '0');
-            }
-    });
-
-   $('#pageContent').bind('swiperight', function(e) {
-       var currElemDiv = getCurrenElementDiv();
-        var currElemNav = getCurrenElementNav();
-       if (currElemDiv.attr("id") != "homeSection") {
-                currElemNav.removeClass("active");
-                currElemNav.prev().addClass("active");
-
-                currElemDiv.css('left', '-200rem');
-                currElemDiv.prev().css('left', '0');
-            }
-   }); 
-    
-/*
-    PROMPT FOR MOBILE DEVICES
-*
-    if ((/Mobi/.test(navigator.userAgent)) || ($(window).width() < 1024)) {
-        $('.prompt-message').css('display', 'block');
+        return false;
     }
-    
-    $('.close-prompt').click(function(e) {
-        $('.prompt-message').css('display', 'none');
+
+    sendButton.on('click', function(e) {
+    	send();
     });
-*/
+
+    var $form = $("#" + form_id);
+    $form.submit(function( event ) {
+        event.preventDefault();
+    });
 });

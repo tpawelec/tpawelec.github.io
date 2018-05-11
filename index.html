@@ -1,246 +1,366 @@
-<!doctype html>
-<html lang="pl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomasz Pawelec</title>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.min.css">
+	<title>Tomasz Pawelec Portfolio</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+	<link rel="stylesheet" href="css/grid.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- MAIN CONTAINER-->
-    <div class="main-container">
-    	<!-- NAVIGATION. WILL BE VERTICAL AND FIXED-->
-    	<div class="menu-bar">
-    		<nav>
-    			<ul class="navigation-list" id="navList">
-    				<li class="nav-item active" id="home">
-    					Home
-    					<p class="marker"></p>
-    				</li>
-    				<li class="nav-item" id="about">
-    					About me
-    					<p class="marker"></p>
-    				</li>
-    				<li class="nav-item" id="skills">
-    					Skills
-    					<p class="marker"></p>
-    				</li>
-    				<li class="nav-item" id="projects">
-    					Projects
-    					<p class="marker"></p>
-    				</li>
-    				<li class="nav-item" id="contact">
-    					Contact
-    					<p class="marker"></p>
-    				</li>
-    			</ul>
-    		</nav>
-    	</div>
+	<!-- NAVIGATION/HOME -->
+	<nav class="navigation">
+		<div class="logo">
+				<p class="name">Tomasz Pawelec</p>
+				<p class="portfolio">Portfolio</p>
+			</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<div class="contacts">
+						<i class="fas fa-at"></i><a href="mailto:tpawelec@outlook.com" target="_blank" class="nav-contact">tpawelec@outlook.com</a><br>
+						<i class="fas fa-phone-square"></i><p class="nav-contact">(48) 697-882-816</p><br>
+						<i class="fab fa-facebook-square"></i><a href="https://web.facebook.com/pawelec.tomasz" target="_blank" class="nav-contact">https://web.facebook.com/pawelec.tomasz</a><br>
+						<i class="fab fa-github-square"></i><a href="https://github.com/tpawelec" target="_blank" class="nav-contact">https://github.com/tpawelec</a><br>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="menu">
+						<ul>
+							<li id="Home">Home</li>
+							<li id="Skills">Skills</li>
+							<li id="Projects">Projects</li>
+							<li id="Contact">Contact</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="btn welcome-btn" id="navButton">See my works!</a>
+	</nav>
+	<section class="home" id="HomeSection">
+		<img src="img/myself.jpg" alt="Selfie" class="nav-img">
+		<div class="container">
+			<p>
+				I've recently finished Front-End Developer Bootcamp. Now my goal is further education. I want to learn React and maybe Django.
+			</p>
+			<p>
+				For now I work as freelancer, but I'm looking for a steady job as Frontend Dev.
+			</p>
+			<p>
+				As for other programming languages: I've learned Python by myself. Also I'm familiar with PHP, MySQL, C++ and Java. When I say "familiar" I mean I used to code in these languages some time ago and for now I'm a little rusted. But if you give me some time - I will be right on track again!
+			</p>
+		</div>
+	</section>
 
-    	<!-- MAIN CONTENT OF PAGE -->
-    		<div class="page-content" id="pageContent">
-    		<!-- HOME PAGE -->
-    			<div class="home-section" id="homeSection">
-    			    <p class="title-par">Tomasz Pawelec</p>
-    			    <p class="motto-par">Simple is better</p>
-    			</div>
-            <!-- ABOUT PAGE -->
-                <div class="about-section" id="aboutSection">
-    			    <img src="img/me.jpg" alt="Myself">
-                    <p>Hello.<br>
-                    My name is Tomek. I live in Lodz, Poland.<br>
-                    I've recently finished Front-End Developer Bootcamp. Now my goal is further education. I want to learn React and Wordpress.<br>
-                    As for other programming languages: I've learned Python by myself. Also I'm familiar with PHP, MySQL, C++ and Java. When I say "familiar" I mean I used to code in these languages some time ago and for now I'm a little rusted. But if you give me some time - I will be right on track again!</p>
-    			</div>
-            <!-- SKILLS PAGE -->
-    			<div class="skills-section" id="skillsSection">
-    			    <h2>Know</h2>
-    			        <div class="icons">
-    			            <i class="devicon-bootstrap-plain"></i>
-                            <i class="devicon-css3-plain"></i>
-                            <i class="devicon-git-plain"></i>
-                            <i class="devicon-grunt-line"></i>
-                            <i class="devicon-html5-plain"></i>
-                            <i class="devicon-javascript-plain"></i>
-                            <i class="devicon-jquery-plain"></i>
-                            <i class="devicon-sass-original"></i>
-                            <i class="devicon-python-plain"></i>
-                        </div>
-    			    <h2>Familiar with</h2>
-    			        <div class="icons">
-    			        <i class="devicon-cplusplus-plain"></i>
-                        <i class="devicon-php-plain"></i>
-                        <i class="devicon-mysql-plain"></i>
-                        <i class="devicon-java-plain"></i>
-                        <i class="devicon-linux-plain"></i>
-                    </div>
-    			    <h2>Want to learn</h2>
-    			        <div class="icons">
-    			        <i class="devicon-react-plain"></i>
-                        <i class="devicon-django-plain"></i>
-                        <i class="devicon-wordpress-plain"></i>
-                    </div>
-                    <h2>Certificates</h2>
-                    <div class="certificates">
-                    <a href="certificates/kodilla_pl.pdf" target="_blank">Bootcamp Front-end Developer (PL)</a><br>
+	<!-- SKILLS -->
+	<section class="skills" id="SkillsSection">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">	
+					<h2>I feel good with</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-2">
+					<p class="title">HTML5</p>
+					<p class="scale">
+						<i class="html5"></i>
+					</p>
+				</div>
+				<div class="col-2">
+					<p class="title">CSS3</p>
+					<p class="scale"><i class="css3"></i></p>
+				</div>
+				<div class="col-2">
+					<p class="title">JavaScript</p>
+					<p class="scale"><i class="js"></i></p>
+				</div>
+				<div class="col-2">
+					<p class="title">jQuery</p>
+					<p class="scale"><i class="jquery"></i></p>
+				</div>
+				<div class="col-2">
+					<p class="title">Bootstrap</p>
+					<p class="scale"><i class="bootstrap"></i></p>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-3"></div>
+				<div class="col-2">
+					<p class="title">Sass</p>
+					<p class="scale"><i class="sass"></i></p>
+				</div>
+				<div class="col-2">
+					<p class="title">GIT</p>
+					<p class="scale"><i class="git"></i></p>
+				</div>
+				<div class="col-2">
+					<p class="title">Grunt</p>
+					<p class="scale"><i class="grunt"></i></p>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-5"></div>
+				<div class="col-2">
+					<p class="title">Python</p>
+					<p class="scale"><i class="python"></i></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h2>i'm familiar with</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 d-flex justify-content-around">
+					<i class="devicon-cplusplus-plain-wordmark"></i>
+					<i class="devicon-php-plain"></i>
+					<i class="devicon-mysql-plain-wordmark"></i>
+					<i class="devicon-java-plain-wordmark"></i>
+					<i class="devicon-linux-plain"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h2>Want to learn</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 d-flex justify-content-around">
+					<i class="devicon-react-original-wordmark"></i>
+					<i class="devicon-django-plain-wordmark"></i>
+					<i class="devicon-wordpress-plain-wordmark"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h2>certificates</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<a href="certificates/kodilla_pl.pdf" target="_blank">Bootcamp Front-end Developer (PL)</a><br>
                     <a href="certificates/kodilla_en.pdf" target="_blank">Bootcamp Front-end Developer (EN)</a><br>
                     <a href="certificates/python.pdf" target="_blank">Python 3 (EN)</a>
-                    </div>
-    			</div>
-            <!-- PROJECTS PAGE -->
-    			<div class="projects-section" id="projectsSection">
-                   <!-- FRONT END DEVELOPING PART -->
-    			    <div class="row  pr-title">
-                        <div class="col-sm-12">
-                        <h3>My Works</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 col-6">
-                            <img src="img/tryiton.jpg" alt="TryItOn WebPage">
-                            <div class="layer">
-                                <a href="https://tpawelec.github.io/tryiton" target="_blank">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/tpawelec/tryiton" target="_blank">
-                                    <i class="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <p>Try.It.On. Webpage</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/layout.JPG" alt="Layout RWD">
-                            <div class="layer">
-                                <a href="https://tpawelec.github.io/rwd_layout/index.html" target="_blank">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/tpawelec/rwd_layout" target="_blank">
-                                    <i class="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <p>RWD Single Page Layout</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/kanban.JPG" alt="Kanban App">
-                            <div class="layer">
-                                <a href="https://tpawelec.github.io/kanban_js/index.html" target="_blank">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/tpawelec/kanban_js" target="_blank">
-                                    <i class="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <p>Kanban App with API</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/rps.JPG" alt="Rock Paper Scissors">
-                            <div class="layer">
-                                <a href="https://tpawelec.github.io/rockpaperscrissors_js/index.html" target="_blank">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/tpawelec/rockpaperscrissors_js" target="_blank">
-                                    <i class="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <p>Rock Paper Scissors Game</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 col-6">
-                            <img src="img/layout2.jpg" alt="RWD Single Page">
-                            <div class="layer">
-                                <a href="https://tpawelec.github.io/layout_task1/" target="_blank">
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                </a>
-                                <a href="https://github.com/tpawelec/layout_task1" target="_blank">
-                                    <i class="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <p>RWD Single Page</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/texteditor.JPG" alt="Text Editor">
-                            <div class="layer">
-                                <a href="https://github.com/tpawelec/text_editor" target="_blank">
-                                    <i class="fa fa-github python" aria-hidden="true"></i>
-                                </a>
-                                <p>Basic Text Editor (Python)</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/enigma.JPG" alt="Enigma">
-                            <div class="layer">
-                                <a href="https://github.com/tpawelec/enigma" target="_blank">
-                                    <i class="fa fa-github python" aria-hidden="true"></i>
-                                </a>
-                                <p>Console Enigma encrypter (Python)</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-3 col-6">
-                            <img src="img/zipf.JPG" alt="Zipf Law">
-                            <div class="layer">
-                                <a href="https://github.com/tpawelec/rockpaperscrissors_js" target="_blank">
-                                    <i class="fa fa-github python" aria-hidden="true"></i>
-                                </a>
-                                <p>Zipf Law Checkout</p>
-                            </div>
-                        </div>
-                    </div>
-    			</div>
-            <!-- CONTACT PAGE -->
-    			<div class="contact-section" id="contactSection">
-                    <section class="social-media">
-                    	<h3>You can find me on</h3>
-                    	<div class="social-icons d-flex justify-content-around">
-                    		<button type="button" onclick="window.open('https://web.facebook.com/pawelec.tomasz', '_blank')" class="icon-btn facebook">
-                    			<i class="fa fa-facebook"></i>
-                    		</button>
-                    		<button type="button" onclick="window.open('https://twitter.com/tpawelec_pl', '_blank')" class="icon-btn twitter">
-                    			<i class="fa fa-twitter"></i>
-                    		</button>
-                    		<button type="button" onclick="window.open('https://github.com/lilinho', '_blank')" class="icon-btn github">
-                    			<i class="fa fa-github"></i>
-                    		</button>
-                    	</div>
-                    </section>
-                    <section class="contact-me">
-                    <section class="phone row">
-                    	<div class="col-sm-3"></div>
-                    	<div class="col-sm-3 title">
-                    		Phone:
-                    	</div>
-                    	<div class="col val">
-                    		+48 697 882 816
-                    	</div>
-                    </section>
-                    <section class="mail row">
-                    	<div class="col-sm-3"></div>
-                    	<div class="col-sm-3 title">
-                    		E-Mail:
-                    	</div>
-                    	<div class="col val">
-                    		<a href="mailto:tpawelec@outlook.com?subject=Portfolio Contact">tpawelec@outlook.com</a>
-                    	</div>
-                    </section>
-                </section>
-    			</div>
-    	</div>
-    	
-    </div>
-    <!-- SCRIPTS: jQuery, jQuery UI and own -->
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
-    <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="js/scripts.min.js"></script>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PROJECTS -->
+	<section class="projects" id="ProjectsSection">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Front-End</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4 project-item tryiton">
+					<div class="project-layer">
+						<p>Try.It.On</p>
+						<button class="btn project-btn" id="tryItOn">Show more</button>
+					</div>
+				</div>
+				<div class="col-4 project-item monero">
+					<div class="project-layer">
+						<p>Monero Mining</p>
+						<button class="btn project-btn" id="monero">Show more</button>
+					</div>
+				</div>
+				<div class="col-4 project-item firstpage">
+					<div class="project-layer">
+						<p>First layout</p>
+						<button class="btn project-btn" id="firstpage">Show more</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4 project-item secondpage">
+					<div class="project-layer">
+						<p>Second layout</p>
+						<button class="btn project-btn" id="secondpage">Show more</button>
+					</div>
+				</div>
+				<div class="col-4 project-item kanban">
+					<div class="project-layer">
+						<p>Kanban</p>
+						<button class="btn project-btn" id="kanban">Show more</button>
+					</div>
+				</div>
+				<div class="col-4 project-item rockpaperscissors">
+					<div class="project-layer">
+						<p>Rock Paper Scissors</p>
+						<button class="btn project-btn" id="rockpaperscissors">Show more</button>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h2>Python</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3 project-item rpncalc">
+					<div class="project-layer">
+						<p>RPN Calculator</p>
+						<button class="btn project-btn" id="rpncalc">Show more</button>
+					</div>
+				</div>
+				<div class="col-3 project-item zipf">
+					<div class="project-layer">
+						<p>Zipf Law Graph</p>
+						<button class="btn project-btn" id="zipf">Show more</button>
+					</div>
+				</div>
+				<div class="col-3 project-item enigma">
+					<div class="project-layer">
+						<p>Enigma encrypter</p>
+						<button class="btn project-btn" id="enigma">Show more</button>
+					</div>
+				</div>
+				<div class="col-3 project-item weather">
+					<div class="project-layer">
+						<p>Weather App</p>
+						<button class="btn project-btn" id="weather">Show more</button>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 40px">
+				<div class="col-12">
+					<a href="https://github.com/tpawelec/rpn_calc" target="_blank" class="btn btn-seeonline">
+					<i class="fab fa-github-square"></i>
+					See more on GitHub
+				</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CONTACT -->
+	<section class="contact" id="ContactSection">
+		<div class="container">
+			<div class="row">
+		<div class="col-12">
+				<h2>Get in Touch</h2>
+				<form method="post" id="contactForm">
+					<div class="row">
+						<div class="col-6">
+							<div class="form-group">
+								<label for="inputName">Name</label>
+								<input type="text" class="form-control" id="inputName" name="sender" required>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="inputEmail">Email</label>
+								<input type="email" class="form-control" id="inputEmail" name="reply_to" required>
+							</div>
+						</div>
+					</div>            
+					<div class="form-group">
+						<label for="inputSubject">Subject</label>
+						<input type="text" class="form-control" id="inputSubject" name="subject" required>
+					</div>
+					<div class="form-group">
+						<label for="inputMessage">Message</label>
+						<textarea class="form-control" id="inputMessage" rows="5" name="text" required></textarea>
+					</div>
+					<div class="text-center">
+						<input type="submit" name="send" value="Send" class="btn btn-contact"/>
+					</div> 
+					 <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>           
+				</form>
+		</div>
+	</div>
+		</div>
+	</section>
+
+
+	<!-- MODALS -->
+	<div class="modal-background">
+		<div class="modal-wrapper">
+			<p class="close">&times;</p>
+			<figure class="img-wrapper">
+				<img src="" alt="">
+			</figure>
+			<!-- FRONTEND -->
+			<div class="caption tryItOn-caption">
+				<h3>Try.It.On</h3>
+				<p>My first commercial webpage for home company, which creates handmade vegan bags and bagpacks.</p>
+				<a href="https://tpawelec.github.io/tryiton/" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<div class="caption firstpage-caption">
+				<h3>First page</h3>
+				<p>First page made during bootcamp for training puproses. Full RWD. </p>
+				<a href="https://tpawelec.github.io/rwd_layout/" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<div class="caption secondpage-caption">
+				<h3>Second page</h3>
+				<p>Second page made during bootcamp for trainig purposes. Full RWD. </p>
+				<a href="https://tpawelec.github.io/layout_task1/" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<div class="caption kanban-caption">
+				<h3>Kanban</h3>
+				<p>My implementation of KanbanApp. Pure and simple. Project for bootcamp.</p>
+				<a href="https://tpawelec.github.io/kanban_js/" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<div class="caption monero-caption">
+				<h3>Monero mining</h3>
+				<p>Last and biggest webpage for Monero mining service.</p>
+				<p>Constant comunication with API (chart and server stats are refreshed every 10 secs), authorization via API/cookie.</p>
+				<a href="http://work.monero.me:12345/index.html" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<div class="caption rockpaperscissors-caption">
+				<h3>Rock Paper Scissors Game</h3>
+				<p>Simple Rock-Paper-Scissors-Lizard-Spock Game.</p>
+				<p>Player vs Computer. </p>	
+				<a href="https://tpawelec.github.io/rockpaperscissors_js/" target="_blank" class="btn btn-seeonline">See online</a>
+			</div>
+			<!-- PYTHON -->
+			<div class="caption rpncalc-caption">
+				<h3>RPN Calculator</h3>
+				<p>Reverse Polish Notation Calculator with stack implementation. <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation" target="_blank">Wiki</a> for Reverse Polish Notation</p>
+				<a href="https://github.com/tpawelec/rpn_calc" target="_blank" class="btn btn-seeonline">
+					<i class="fab fa-github-square"></i>
+					View on GitHub
+				</a>
+			</div>
+			<div class="caption zipf-caption">
+				<h3>Zipf's Law Check</h3>
+				<p>Zipf's law states that given some corpus of natural language utterances, the frequency of any word is inversely proportional to its rank in the frequency table. (from Wikipedia). In this program I count word occurencies in given text file and present them on the graph next to estimated words frequency. For this moment program is not finished and has some bugs.</p>
+				<a href="https://github.com/tpawelec/zipf" target="_blank" class="btn btn-seeonline">
+					<i class="fab fa-github-square"></i>
+					View on GitHub
+				</a>
+			</div>
+			<div class="caption enigma-caption">
+				<h3>Enigma</h3>
+				<p>Probably my biggest project in Python. Not because of complicity of code but because of time I've spend at gathering information and understanding how Enigma really works. This version corresponds for Enigma I/M3 (3 basic rotors in Enigma 1 + 2 addictional rotors added in M3, two reflectors and plugboard). Key for encrypt/decrypt is in key.exe file.</p>
+				<a href="https://github.com/tpawelec/enigma/" target="_blank" class="btn btn-seeonline">
+					<i class="fab fa-github-square"></i>
+					View on GitHub
+				</a>
+			</div>
+			<div class="caption weather-caption">
+				<h3>Weather App</h3>
+				<p>My first project in Python. Simple text weather app with Yahoo! Weather API.</p>
+				<a href="https://github.com/tpawelec/weather" target="_blank" class="btn btn-seeonline">
+					<i class="fab fa-github-square"></i>
+					View on GitHub
+				</a>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
