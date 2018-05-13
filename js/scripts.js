@@ -54,7 +54,7 @@ $(document).ready(function () {
 		})
 		if(mobile.matches) {
 			$(".navigation").css({
-				height: "60vh"
+				height: "65vh"
 			});
 		} else {
 			$(".navigation").css({
