@@ -18,6 +18,7 @@ function strech_text(el){
     
 }
 
+var mobile = window.matchMedia("(max-width: 576px)");
 $(document).ready(function () {
 
 	/*
@@ -51,10 +52,15 @@ $(document).ready(function () {
 		$(".logo").css({
 			display: "none"
 		})
-
-		$(".navigation").css({
-			height: "40vh"
-		});
+		if(mobile.matches) {
+			$(".navigation").css({
+				height: "60vh"
+			});
+		} else {
+			$(".navigation").css({
+				height: "40vh"
+			});
+		}
 
 		$("section").each(function(index, sect) {
 			$(sect).css({
@@ -164,10 +170,17 @@ $(document).ready(function () {
 		$(e.currentTarget.childNodes[1]).css({
 			"margin-top": 0
 		});
-		$(e.currentTarget.childNodes[3]).css({
-			"bottom": "75px",
-			"opacity": 1
-		});
+		if(mobile.matches) {
+			$(e.currentTarget.childNodes[3]).css({
+				"bottom": "15px",
+				"opacity": 1
+			});
+		} else {
+			$(e.currentTarget.childNodes[3]).css({
+				"bottom": "75px",
+				"opacity": 1
+			});
+		}
 	});
 
 	$projectLayer.on("mouseout", function(e) {

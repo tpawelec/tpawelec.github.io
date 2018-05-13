@@ -532,7 +532,7 @@ a.welcome-btn:link:hover:after, a.welcome-btn:visited:hover:after {
 }
 
 .modal-wrapper {
-	position: fixed;
+	position: absolute;
 	top: 10%;
 	min-height: 600px;
 	height: auto;
@@ -658,14 +658,3 @@ a.welcome-btn:link:hover:after, a.welcome-btn:visited:hover:after {
 	}
 }
 
-@media(max-width: 600px) {
-	.navigation {
-		background: 
-    linear-gradient(
-      var(--color1rgba), 
-      var(--color1rgba)
-    ),
-    url('../img/bg-nav-600.jpg');
-    background-size: cover;
-	}
-}
