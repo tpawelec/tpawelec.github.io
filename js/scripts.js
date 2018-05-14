@@ -51,10 +51,10 @@ $(document).ready(function () {
 
 		$(".logo").css({
 			display: "none"
-		})
+		});
 		if(mobile.matches) {
 			$(".navigation").css({
-				height: "60vh"
+				height: "65vh"
 			});
 		} else {
 			$(".navigation").css({
@@ -279,5 +279,4 @@ $(document).ready(function () {
     	send();
     });
 
-    
 });

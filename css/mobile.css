@@ -68,7 +68,7 @@
 	.nav-img {
 		height: 150px;
 		width: 150px;
-		top: calc(60vh - 75px);
+		top: calc(65vh - 75px);
 	}
 
 	.home p {
@@ -161,7 +161,7 @@
 .modal-wrapper {
 	position: absolute;
 	min-height: initial;
-	top: 20%;
+	top: 10%;
 	left: 5%;
 	right: initial;
 	width: 90%;
