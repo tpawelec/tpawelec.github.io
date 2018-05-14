@@ -7,6 +7,8 @@
 			var(--color1rgba)
 			),
 		url('../img/bg-nav-600.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	.logo {
@@ -111,8 +113,14 @@
 
 .projects .project-item {
 	height: 150px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
+.zipf,
+.weather {
+	background-size: 150%!important;
+}
 .project-layer {
 	padding: 15px;
 	font-size: 20px;

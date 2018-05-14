@@ -507,6 +507,10 @@ a.welcome-btn:link:hover:after, a.welcome-btn:visited:hover:after {
 	background-color: var(--color6);
 }
 
+.contact .btn-contact:disabled {
+	border: var(--color6rgba) 2px solid;
+	color: var(--color6rgba);
+}
 .contact p,
 .contact p>a {
 	color: var(--color6rgba)!important;

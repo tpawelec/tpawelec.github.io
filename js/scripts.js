@@ -196,7 +196,7 @@ $(document).ready(function () {
 
 	/* Projects MODALS */
 
-	$("#ProjectsSection .btn").click(function(e){
+	$("#ProjectsSection .btn:not(a)").click(function(e){
 		e.preventDefault();
 		var projectId = e.currentTarget.id;
 		$(".modal-wrapper > figure").css({
@@ -231,7 +231,6 @@ $(document).ready(function () {
 		Contact form
 	*/
 
-	//update this with your $form selector
     var form_id = "contactForm";
 
     var data = {
@@ -241,11 +240,19 @@ $(document).ready(function () {
     function onSuccess() {
         // remove this to avoid redirect
         sendButton.val('Email successfuly sent');
+        setTimeout(function() {
+    		sendButton.val("Send");
+    		sendButton.prop('disabled',false);
+    	}, 1500);
     }
 
     function onError(error) {
         // remove this to avoid redirect
         sendButton.val('Email could not be sent');
+        setTimeout(function() {
+    		sendButton.val("Send");
+    		sendButton.prop('disabled',false);
+    	}, 1500);
     }
 
     var sendButton = $("#" + form_id + " [name='send']");
@@ -265,16 +272,12 @@ $(document).ready(function () {
             data,
             onSuccess
         ).fail(onError);
-
-        return false;
+        return true;
     }
 
     sendButton.on('click', function(e) {
     	send();
     });
 
-    var $form = $("#" + form_id);
-    $form.submit(function( event ) {
-        event.preventDefault();
-    });
+    
 });
