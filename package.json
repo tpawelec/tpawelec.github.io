@@ -1,0 +1,32 @@
+{
+  "name": "portfolio-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpawelec/tpawelec.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpawelec/tpawelec.github.io/issues"
+  },
+  "homepage": "https://github.com/tpawelec/tpawelec.github.io#readme",
+  "dependencies": {
+    "imagemin-mozjpeg": "^8.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-imagemin": "^3.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-html": "^10.1.0",
+    "grunt-responsive-images": "^1.10.1"
+  }
+}
