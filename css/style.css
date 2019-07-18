@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Francois+One|Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Staatliches&display=swap');
 
 :root {
     --font-header: 'Staatliches', cursive;
-    --font-paragraph: 'Francois One', sans-serif;
+    --font-paragraph: 'Raleway', sans-serif;
     --background-nav: rgba(57, 61, 63, 0.43);
     --background-title: rgba(255, 255, 255, 0.41);
     --background-header: rgba(255, 119, 119, 0.46);
+    --background-contact: #37505C;
     --color-nav: #DEE5E5;
     --color-title: rgba(0, 0, 0, 0.5);
     --color-header: rgba(0, 0, 0, 0.8);
@@ -59,6 +60,7 @@
     background-image: url('../assets/images/bg-xlarge.jpg');
     background-size: cover;
     background-position-y: 20%;
+    background-attachment: fixed;
     height: 100vh;
     
 }
@@ -140,10 +142,7 @@
     padding: 100px;
 }
 
-.projects .header--lvl3 {
-    grid-column-start: 1;
-    grid-column-end: end;
-}
+
 .projects__item {
     background: #FFFDFD;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -203,4 +202,84 @@
     width: 25px;
     height: 25px;
     background-size: 25px 25px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+    background-color: var(--background-contact);
+    padding: 50px;
+}
+
+.projects .header--lvl3,
+.contact .header--lvl3 {
+    grid-column-start: 1;
+    grid-column-end: end;
+}
+
+.contact .header--lvl3 {
+    color: var(--color-nav);
+}
+.contact__social {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+}
+
+.contact__contact-form {
+    grid-column-start: 2;
+    grid-column-end: end;
+}
+
+
+.contact__input,
+.contact__textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: var(--color-nav);
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
+}
+
+.contact__textarea {
+    resize: none;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.contact__button {
+    box-sizing: border-box;
+    font-size: 22px;
+    padding: 15px;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--background-header);
+    margin-left: 15%;
+}
+
+.contact__button:disabled {
+    background-color: var(--background-title);
+}
+
+.contact__button:hover {
+    box-shadow: inset 0px 0px 51px -15px var(--color-title);
+}
+.honeypot-field {
+    display: none;
 }
