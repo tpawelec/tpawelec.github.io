@@ -118,47 +118,7 @@ $(document).ready(function () {
 		}, 1000);
 		});
 	
-	window.sr = ScrollReveal();
-	sr.reveal("#SkillsSection .container", {
-		afterReveal: function () {
-			$(".skills .scale > .html5").css({
-				width: "70%"
-			});
-
-			$(".skills .scale > .css3").css({
-				width: "75%"
-			});
-
-			$(".skills .scale > .js").css({
-				width: "55%"
-			});
-
-			$(".skills .scale > .jquery").css({
-				width: "55%"
-			});
-
-			$(".skills .scale > .bootstrap").css({
-				width: "40%"
-			});
-
-			$(".skills .scale > .sass").css({
-				width: "40%"
-			});
-
-			$(".skills .scale > .git").css({
-				width: "40%"
-			});
-
-			$(".skills .scale > .grunt").css({
-				width: "40%"
-			});
-
-			$(".skills .scale > .python").css({
-				width: "35%"
-			});
-		}});
-	sr.reveal("#ProjectsSection .container");
-	sr.reveal("#ContactSection .container");
+	
 
 	/*
 		Projects
