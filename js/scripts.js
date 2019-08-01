@@ -8,9 +8,9 @@ function parallax() {
     let scroll = window.scrollY;
     let offset = header.getBoundingClientRect().bottom;
     if(offset > screenHeight && offset) {
-        header.style.backgroundPosition = 'center ' + 'calc(' + (( distanceFromBottom  ) * 0.5) + 'px + 20%)';
+        header.style.backgroundPosition = 'center ' + 'calc(' + (( distanceFromBottom  ) * 0.3) + 'px + 20%)';
     } else {
-        header.style.backgroundPosition = 'center ' + 'calc(' + (( -scroll ) * 0.5) + 'px + 20%)';
+        header.style.backgroundPosition = 'center ' + 'calc(' + (( -scroll ) * 0.3) + 'px + 20%)';
     }
 
 }
