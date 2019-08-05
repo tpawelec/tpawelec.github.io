@@ -1,21 +1,24 @@
 /*
-    Parallax
+  Menu active links
 */
-const header = document.querySelector('.p-header');
-let screenHeight = window.innerHeight;
 
-function parallax() {
-    let scroll = window.scrollY;
-    let offset = header.getBoundingClientRect().bottom;
-    if(offset > screenHeight && offset) {
-        header.style.backgroundPosition = 'center ' + 'calc(' + (( distanceFromBottom  ) * 0.3) + 'px + 20%)';
-    } else {
-        header.style.backgroundPosition = 'center ' + 'calc(' + (( -scroll ) * 0.3) + 'px + 20%)';
-    }
-
+const menuItems = document.querySelectorAll('.p-header__item a');
+let sectionsArray = ['#homeSection', '#aboutSection', '#worksSection', '#contactSection'];
+let sectionsPosition = [];
+for(let section of sectionsArray) {
+  sectionsPosition.push(document.querySelector(section).getBoundingClientRect().top);
 }
-
-window.addEventListener('scroll', parallax);
+function findPosition(position) {
+  let scroll = window.scrollY;
+  return scroll <= position + 400;
+}
+window.addEventListener('scroll', () => {
+  let currentSection = sectionsPosition.findIndex(findPosition);
+  menuItems.forEach(item => {
+    item.classList.remove('p-header__item--active');
+  })
+  menuItems[currentSection].classList.add('p-header__item--active');
+})
 
 /*
     Smooth scroll
@@ -86,17 +89,18 @@ Math.easeInOutQuad = function (t, b, c, d) {
   }
 
 
-  const menuItems = document.querySelectorAll('.p-header__item a');
+  
   for (const item of menuItems) {
 
     item.addEventListener('click', (evt) => {
 
       const bodyRect = document.body.getBoundingClientRect();
       const elemRect = document.querySelector(evt.currentTarget.getAttribute('href')).getBoundingClientRect();
-      console.log(elemRect.top);
       const offset = elemRect.top - bodyRect.top;
       scrollTo(offset, null, 300);
     })
   }
+
+ 
 
 

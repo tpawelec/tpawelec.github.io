@@ -58,23 +58,28 @@
     position: relative;
     background-image: url('../assets/images/bg-xlarge.jpg');
     background-size: cover;
-    background-position: initial;
-    height: 100vh;
-    
+    background-attachment: fixed;
+    height: 65vh;
 }
 
 .p-header__nav {
     position: fixed;
+    z-index: 10;
     width: 100%;
-    z-index: 9999;
     height: 100px;
-    background-color: var(--background-nav);
+    background-color: rgb(57, 61, 63);
     font-size: 48px;
     line-height: 60px;
     padding-top: 1px;
     margin-top: -1px;
 }
 
+.p-header__nav--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .p-header__menu {
     list-style-type: none;
     text-align: right;
@@ -94,12 +99,17 @@
     color: var(--color-nav);
     font-family: var(--font-header);
 }
+
+.p-header__item--active {
+    color: var(--background-header)!important;
+}
+
 .p-header__title {
     width: 55vw;
     height: 30vh;
     position: absolute;
-    top: 60%;
-    left: 15%;
+    top: 40%;
+    left: 10%;
     background-color: var(--background-title);
     color: var(--color-title);
     padding: 20px;
@@ -159,7 +169,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 50px;
-    padding: 50px;
+    padding: 0 50px 50px 50px;
 }
 
 
@@ -229,7 +239,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 50px;
     background-color: var(--background-contact);
-    padding: 50px;
+    padding: 0 50px 50px 50px;
 }
 
 .projects .header--lvl3,
