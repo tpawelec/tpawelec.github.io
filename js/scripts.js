@@ -1,24 +1,37 @@
 /*
+  SlickNav
+*/
+
+$(function(){
+  $('#menu').slicknav({
+    label: '',
+    closeOnClick: true,
+    prependTo: '#homeSection'
+  });
+});
+
+/*
   Menu active links
 */
 
 const menuItems = document.querySelectorAll('.p-header__item a');
-let sectionsArray = ['#homeSection', '#aboutSection', '#worksSection', '#contactSection'];
-let sectionsPosition = [];
-for(let section of sectionsArray) {
-  sectionsPosition.push(document.querySelector(section).getBoundingClientRect().top);
-}
-function findPosition(position) {
-  let scroll = window.scrollY;
-  return scroll <= position + 400;
-}
-window.addEventListener('scroll', () => {
-  let currentSection = sectionsPosition.findIndex(findPosition);
-  menuItems.forEach(item => {
-    item.classList.remove('p-header__item--active');
-  })
-  menuItems[currentSection].classList.add('p-header__item--active');
-})
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY + 200;
+
+  menuItems.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (
+      section.offsetTop < fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("p-header__item--active");
+    } else {
+      link.classList.remove("p-header__item--active");
+    }
+  });
+});
 
 /*
     Smooth scroll
@@ -93,7 +106,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
   for (const item of menuItems) {
 
     item.addEventListener('click', (evt) => {
-
+      evt.preventDefault();
       const bodyRect = document.body.getBoundingClientRect();
       const elemRect = document.querySelector(evt.currentTarget.getAttribute('href')).getBoundingClientRect();
       const offset = elemRect.top - bodyRect.top;
@@ -102,5 +115,3 @@ Math.easeInOutQuad = function (t, b, c, d) {
   }
 
  
-
-
