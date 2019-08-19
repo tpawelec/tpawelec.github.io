@@ -48,7 +48,7 @@
     background-color: var(--background-header);
     position: absolute;
     top: 35px;
-    left: 50%; 
+    left: 30%; 
 }
 
 [class*='header--'] {
@@ -471,7 +471,7 @@
         height: 45px;
         width: 180px;
         top: 25px;
-        left: 10%; 
+        left: 30%; 
     }
 
     .p-header {
@@ -578,7 +578,7 @@
         height: 45px;
         width: 180px;
         top: 25px;
-        left: 10%; 
+        left: 30%; 
     }
 
     .p-header {
