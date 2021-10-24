@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Staatliches&display=swap');
-
 :root {
     --font-header: 'Staatliches', cursive;
     --font-paragraph: 'Raleway', sans-serif;
@@ -32,7 +31,6 @@
 }
 
 .header--lvl3 {
-    
     color: var(--color-header);
     font-size: 64px;
     position: relative;
@@ -48,8 +46,7 @@
     background-color: var(--background-header);
     position: absolute;
     top: 35px;
-    left: 30%; 
-
+    left: 30%;
 }
 
 .header--skills::before {
@@ -59,8 +56,7 @@
     background-color: var(--background-header);
     position: absolute;
     top: 35px;
-    left: 48%; 
-
+    left: 48%;
 }
 
 .header--projects::before {
@@ -70,8 +66,7 @@
     background-color: var(--background-header);
     position: absolute;
     top: 35px;
-    left: 45%; 
-
+    left: 45%;
 }
 
 .header--contact::before {
@@ -81,18 +76,26 @@
     background-color: var(--background-header);
     position: absolute;
     top: 35px;
-    left: 44%; 
-
+    left: 44%;
 }
+
 [class*='header--'] {
     font-family: var(--font-header);
 }
+
 .p-header {
     position: relative;
-    background-image: url('../assets/images/bg-xlarge.jpg');
+    height: 80vh;
+}
+
+.p-header__image {
+    width: 100%;
+    height: 80vh;
+    background-image: url('../assets/images/bg-xlarge.webp');
     background-size: cover;
     background-attachment: fixed;
-    height: 80vh;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 .p-header__nav {
@@ -105,22 +108,25 @@
     line-height: 60px;
     padding-top: 1px;
     margin-top: -1px;
+    z-index: 2;
 }
+
 .slicknav_menu {
     display: none;
 }
+
 .p-header__nav--fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
+
 .p-header__menu {
     list-style-type: none;
     text-align: right;
     margin-right: 20px;
     margin-top: 20px;
-    
 }
 
 .p-header__item {
@@ -154,20 +160,17 @@
     padding: 20px;
 }
 
-
 .about {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 50px;
     padding: 50px;
-
 }
 
 .about__about-me {
     grid-column-start: 1;
-    grid-column-end: 2; 
+    grid-column-end: 2;
 }
-
 
 .about__about-me img {
     display: block;
@@ -175,6 +178,7 @@
     height: 250px;
     margin: 0 auto;
     clip-path: polygon(40% 0, 100% 0, 100% 60%, 60% 100%, 0 100%, 0 40%);
+    -webkit-clip-path: polygon(40% 0, 100% 0, 100% 60%, 60% 100%, 0 100%, 0 40%);
     object-fit: cover;
 }
 
@@ -195,11 +199,11 @@
     display: block;
 }
 
-
 .about__icons {
     display: flex;
     justify-content: space-between;
 }
+
 .about__icons svg {
     width: 100px;
     height: auto;
@@ -211,7 +215,6 @@
     grid-column-gap: 50px;
     padding: 0 50px 50px 50px;
 }
-
 
 .projects__item {
     background: #FFFDFD;
@@ -240,6 +243,24 @@
     width: auto;
     float: left;
     margin-left: -30%;
+    -webkit-clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 30% 100%, 0 70%);
+    clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 30% 100%, 0 70%);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.projects__img:hover {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%, 0% 100%, 0 100%);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
 }
 
 .projects__desc {
@@ -257,6 +278,7 @@
     left: 0;
     bottom: 25px;
 }
+
 .projects__git-link {
     background: url('../assets/icons-exp/github-logo.svg');
 }
@@ -291,6 +313,7 @@
 .contact .header--lvl3 {
     color: var(--color-nav);
 }
+
 .contact__social {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -304,10 +327,12 @@
     text-align: center;
     margin-bottom: 70px;
 }
+
 .contact__socialmedia {
     display: flex;
     justify-content: space-evenly;
 }
+
 .contact__socialmedia svg {
     fill: var(--color-nav);
     width: 70px;
@@ -315,48 +340,37 @@
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
-
-
     .header--lvl3 {
         font-size: 44px;
     }
-    
     .header--lvl3::before {
         height: 45px;
         width: 180px;
         top: 25px;
-        left: 30%; 
+        left: 30%;
     }
-
-    .p-header {
-        background-image: url('../assets/images/bg-large.jpg');
+    .p-header__image {
+        background-image: url('../assets/images/bg-large.webp');
     }
-    
     .p-header__nav {
         height: 70px;
         font-size: 40px;
         line-height: 30px;
     }
-
     .about {
         grid-column-gap: 30px;
-    
     }
-    
     .about__about-me img {
         width: 200px;
         height: 200px;
     }
-    
     .about__paragraph {
         margin-top: 40px;
         font-size: 14px;
     }
-    
     .about__paragraph span {
         margin-bottom: 5px;
     }
-    
     .about__icons {
         flex-wrap: wrap;
     }
@@ -366,91 +380,75 @@
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
-
     .p-header__nav {
         height: 70px;
         font-size: 40px;
         line-height: 30px;
         width: 100vw;
     }
-
     .p-header__title {
         width: 85vw;
         top: 50%;
         left: 5%;
         padding: 10px;
     }
-
     .about {
         grid-template-columns: 1fr;
         grid-column-gap: 0px;
         padding: 10px;
     }
-
     .about__about-me {
         grid-column-start: 1;
-        grid-column-end: end; 
+        grid-column-end: end;
     }
     .about__skills {
         width: 100%;
         grid-column-start: 1;
         grid-column-end: end;
     }
-
     .projects {
         grid-template-columns: 1fr;
         padding: 20px;
     }
-
     .projects__item:nth-child(even),
     .projects__item:nth-child(odd) {
         grid-column-start: 1;
         grid-column-end: end;
     }
-
     .contact {
         grid-template-columns: 1fr;
         grid-column-gap: 10px;
         padding: 20px;
     }
-    
     .projects .header--lvl3,
     .contact .header--lvl3 {
         grid-column-start: 1;
         grid-column-end: end;
         grid-row: 1;
     }
-    
     .contact__social {
         grid-column-start: 1;
         grid-column-end: end;
         grid-row: 3;
     }
-    
     .contact__title {
         margin-top: 40px;
     }
-   
-    
-
 }
+
 @media (max-width: 768px) and (orientation: landscape) {
-    
     .header--lvl3 {
         font-size: 44px;
     }
-    
     .header--lvl3::before {
         height: 45px;
         width: 180px;
         top: 25px;
-        left: 30%; 
+        left: 30%;
     }
-
-    .p-header {
-        background-image: url('../assets/images/bg-medium.jpg');
+    .p-header__image {
+        background-image: url('../assets/images/bg-medium.webp');
     }
-    
     .p-header__nav {
         height: 70px;
         font-size: 40px;
@@ -459,28 +457,21 @@
 }
 
 @media (max-width: 510px) {
-
     .projects {
         grid-template-columns: 1fr;
         grid-column-gap: 0px;
         padding: 50px 0 50px 0;
     }
-    
-    
-    
     .projects__item {
         width: 80vw;
         padding: 10px;
         margin: 0 auto 25px auto;
     }
-    
     .projects__item:nth-child(even),
     .projects__item:nth-child(odd) {
         grid-column-start: 1;
         grid-column-end: end;
     }
-    
-    
     .projects__img {
         width: 65%;
         height: auto;
@@ -488,7 +479,6 @@
         float: none;
         display: block;
     }
-    
     .projects__desc {
         margin-left: auto;
         font-size: 14px;
@@ -502,7 +492,6 @@
         margin-top: 10px;
         margin-left: 25px;
     }
-    
     .header--lvl2 {
         font-size: 5vh;
         margin-top: 5vh;
@@ -527,17 +516,14 @@
         width: 25px;
         height: 25px;
     }
-   
-    }
+}
 
 @media (max-width: 320px) {
-
     .header--lvl1 {
         font-size: 5.5vh;
         margin-top: 10px;
         margin-left: 25px;
     }
-    
     .header--lvl2 {
         font-size: 5vh;
         margin-top: 5vh;
@@ -546,18 +532,15 @@
     .header--lvl3 {
         font-size: 44px;
     }
-    
     .header--lvl3::before {
         height: 45px;
         width: 180px;
         top: 25px;
-        left: 30%; 
+        left: 30%;
     }
-
-    .p-header {
-        background-image: url('../assets/images/bg-small.jpg');
+    .p-header__image {
+        background-image: url('../assets/images/bg-small.webp');
     }
-    
     .p-header__nav {
         height: 70px;
         font-size: 40px;

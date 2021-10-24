@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             static: {
                 options: {
                     optimizationLevel: 3,
-                    svgoPlugins: [{removeViewBox: false}]
+                    svgoPlugins: [{ removeViewBox: false }]
                 }
             },
             dynamic: {
@@ -35,38 +35,38 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'js/scripts.min.js' : 'js/scripts.js'
+                    'js/scripts.min.js': 'js/scripts.js'
                 }
             }
         },
         responsive_images: {
             task: {
-            options: {
-                sizes: 
-                [{
-                    name: 'small',
-                    width: 320
+                options: {
+                    sizes: [{
+                            name: 'small',
+                            width: 320
+                        },
+                        {
+                            name: 'medium',
+                            width: 640
+                        },
+                        {
+                            name: 'large',
+                            width: 1024
+                        },
+                        {
+                            name: 'xlarge',
+                            width: 1680
+                        }
+                    ]
                 },
-                {
-                    name: 'medium',
-                    width: 640
-                },
-                {
-                    name: 'large',
-                    width: 1024
-                },
-                {
-                    name: 'xlarge',
-                    width: 1680
+                files: [{
+                    expand: true,
+                    src: ['images/**.webp'],
+                    dest: 'assets/'
                 }]
-            },
-            files: [{
-                expand: true,
-                src: ['images/**.jpg'],
-                dest: 'assets/'
-            }]
+            }
         }
-    }
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
